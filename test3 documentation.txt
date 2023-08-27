@@ -1,0 +1,36 @@
+Import necessary libraries and modules:
+
+YOLO for object detection using Ultralytics.
+Other modules for file operations, calculations, and image manipulation.
+Initialize YOLO model and define input and output folders:
+
+Load the YOLOv8 pre-trained model.
+Specify the folder containing input images and the folder where grouped images will be saved.
+Define a function to get the list of files in a folder:
+
+This function uses os.walk to traverse through a folder and return a list of file names.
+Define the main function to detect segments in images:
+
+For each image in the input folder:
+Predict objects using YOLO model.
+Count entities using count_Entities.
+Group images using group_images.
+Write entity counts to a CSV using write_to_CSV.
+Count entities in YOLO detection results:
+
+Iterate through YOLO results for each image.
+Count the occurrences of different entities and the total number of objects.
+Write entity counts to a CSV file:
+
+Create a CSV file path based on the image name.
+Write entity names, counts, and total objects to the CSV file.
+Calculate structural similarity between two images:
+
+Convert images to grayscale using PIL.
+Calculate SSIM using skimage's structural_similarity function.
+Group images based on entity counts and similarity:
+
+Create folders for each entity detected in the image.
+Compare current group folder with the similar_folder.
+If the folders are different, move non-similar images to separate folders.
+In the main section, call the detect_Segments function to initiate the image processing and grouping.
